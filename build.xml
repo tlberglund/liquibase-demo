@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="liquibase-demo" default="compile" basedir=".">
+	<property name="lib.dir" value="lib"/>
+	<property name="doc.dir" value="doc"/>
+	<property environment="env"/>
+	<property file="liquibase.properties"/>
+
+	<path id="depend.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.*"/>
+		</fileset>
+	</path>
+
+	<taskdef resource="liquibasetasks.properties">
+		<classpath refid="depend.classpath"/>
+	</taskdef>
+	
+	<target name="dbInit">
+		<generateChangeLog
+			outputFile="changelog.xml"
+			driver="${driver}"
+			url="${url}"
+			username="${username}"
+			password="${password}"
+			classpathref="depend.classpath"
+			/>
+			
+		<changeLogSync
+			changeLogFile="changelog.xml"
+			driver="${driver}"
+			url="${url}"
+			username="${username}"
+			password="${password}"
+			classpathref="depend.classpath"
+			/>
+	</target>
+   
+	
+</project>
