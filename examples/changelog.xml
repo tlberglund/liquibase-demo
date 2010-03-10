@@ -1,0 +1,34 @@
+<changeSet author="tlberglund" id="TMS-rekey-users-to-legacy_id">
+	<comment>Change the primary key of the users table to legacy_id</comment>
+	
+	<dropForeignKeyConstraint baseTableName="shipment_status_log_entry" constraintName="FK_load_status_log_entry_user"/>
+	<dropForeignKeyConstraint baseTableName="shipment_status_log_entry" constraintName="FK760DA7AFF7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="shipment_status_log_entry" constraintName="FKAFD3D5E3F7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="work_list_item_status_log_entry" constraintName="FK_work_list_item_status_log_entry_user"/>
+	<dropForeignKeyConstraint baseTableName="work_list_item_status_log_entry" constraintName="FK4362B463F7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="user_role_rel" constraintName="FK_user_role_rel_user"/>
+	<dropForeignKeyConstraint baseTableName="user_role_rel" constraintName="FKF3249744F7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="user_permission_rel" constraintName="FK_user_permission_rel_user"/>
+	<dropForeignKeyConstraint baseTableName="user_permission_rel" constraintName="FK951A411DF7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="user_location" constraintName="FK7452F9A9F7634DFA"/>
+	<dropForeignKeyConstraint baseTableName="work_list_item" constraintName="FK6FE11666F7634DFA"/>
+	
+	<dropPrimaryKey tableName="users" constraintName="user_PRIMARY"/>
+
+	<addNotNullConstraint tableName="users" columnName="legacy_id" columnDataType="INT"/>
+	<addPrimaryKey tableName="users" columnNames="legacy_id" constraintName="users_PRIMARY"/>
+	
+	<sql>UPDATE shipment_status_log_entry SET user_id=(SELECT legacy_id FROM users WHERE users.id=shipment_status_log_entry.user_id)</sql>
+	<sql>UPDATE work_list_item_status_log_entry SET user_id=(SELECT legacy_id FROM users WHERE users.id=work_list_item_status_log_entry.user_id)</sql>
+	<sql>UPDATE user_role_rel SET user_id=(SELECT legacy_id FROM users WHERE users.id=user_role_rel.user_id)</sql>
+	<sql>UPDATE user_permission_rel SET user_id=(SELECT legacy_id FROM users WHERE users.id=user_permission_rel.user_id)</sql>
+	<sql>UPDATE user_location SET user_id=(SELECT legacy_id FROM users WHERE users.id=user_location.user_id)</sql>
+	<sql>UPDATE work_list_item SET user_id=(SELECT legacy_id FROM users WHERE users.id=work_list_item.user_id)</sql>
+	
+	<addForeignKeyConstraint baseTableName="shipment_status_log_entry" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_load_status_log_entry_user"/>
+	<addForeignKeyConstraint baseTableName="work_list_item_status_log_entry" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_work_list_item_status_log_entry_user"/>
+	<addForeignKeyConstraint baseTableName="user_role_rel" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_user_role_rel_user"/>
+	<addForeignKeyConstraint baseTableName="user_permission_rel" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_user_permission_rel_user"/>
+	<addForeignKeyConstraint baseTableName="user_location" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_user_location__user"/>
+	<addForeignKeyConstraint baseTableName="work_list_item" baseColumnNames="user_id" referencedTableName="users" referencedColumnNames="legacy_id" constraintName="FK_work_list_item__user"/>
+</changeSet>

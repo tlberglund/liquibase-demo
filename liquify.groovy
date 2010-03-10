@@ -56,7 +56,7 @@ else {
 		}
 	}
 
-	def command = "${liquibaseCmd} --defaultsFile=${defaultsFile} --password=${password} ${args.size() > 1 ? args[1..-1].join(' ') : ''} ${liquibaseCommand}"
+	def command = "${liquibaseCmd} --defaultsFile=${defaultsFile} --password=${password}  ${liquibaseCommand} ${args.size() > 1 ? args[1..-1].join(' ') : ''}"
 	println command
 	def process = command.execute()
 	process.consumeProcessOutput(System.out, System.err)
