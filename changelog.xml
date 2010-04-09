@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-	<changeSet author="tlberglund (generated)" id="1253740726317-1">
+	<changeSet author="tlberglund (generated)" id="1270840558741-1">
 		<createTable tableName="scinventoryrecord">
 			<column name="id" type="INT">
 				<constraints nullable="false"/>
@@ -45,7 +45,7 @@
 			<column name="filteredpn" type="VARCHAR(50)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-2">
+	<changeSet author="tlberglund (generated)" id="1270840558741-2">
 		<createTable tableName="scinventoryrecordparm">
 			<column name="inventoryrecordid" type="INT">
 				<constraints nullable="false"/>
@@ -58,7 +58,7 @@
 			</column>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-3">
+	<changeSet author="tlberglund (generated)" id="1270840558741-3">
 		<createTable tableName="sclineitem">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -82,7 +82,7 @@
 			<column name="scrubduration" type="INT"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-4">
+	<changeSet author="tlberglund (generated)" id="1270840558741-4">
 		<createTable tableName="sclineiteminventoryrecord">
 			<column name="projectid" type="INT"/>
 			<column autoIncrement="true" name="id" type="INT">
@@ -97,7 +97,7 @@
 			<column name="matchquality" type="decimal(10,9)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-5">
+	<changeSet author="tlberglund (generated)" id="1270840558741-5">
 		<createTable tableName="scpnparseentry">
 			<column name="pn" type="VARCHAR(50)"/>
 			<column autoIncrement="true" name="id" type="INT">
@@ -111,7 +111,7 @@
 			</column>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-6">
+	<changeSet author="tlberglund (generated)" id="1270840558741-6">
 		<createTable tableName="scpnparseentryparm">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -123,7 +123,7 @@
 			<column name="valuedouble" type="decimal(20,8)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-7">
+	<changeSet author="tlberglund (generated)" id="1270840558741-7">
 		<createTable tableName="scpnqueryentry">
 			<column name="pn" type="VARCHAR(50)"/>
 			<column autoIncrement="true" name="id" type="INT">
@@ -137,7 +137,7 @@
 			</column>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-8">
+	<changeSet author="tlberglund (generated)" id="1270840558741-8">
 		<createTable tableName="scproject">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -149,7 +149,7 @@
 			<column name="sheetname" type="VARCHAR(50)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-9">
+	<changeSet author="tlberglund (generated)" id="1270840558741-9">
 		<createTable tableName="scregistrationwarehouse">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -159,7 +159,7 @@
 			<column name="registrationip" type="VARCHAR(50)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-10">
+	<changeSet author="tlberglund (generated)" id="1270840558741-10">
 		<createTable tableName="scscrubrecordwarehouse">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -169,7 +169,7 @@
 			<column name="timestamp" type="DATETIME"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-11">
+	<changeSet author="tlberglund (generated)" id="1270840558741-11">
 		<createTable tableName="scshoppingcart">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -181,7 +181,7 @@
 			<column name="name" type="VARCHAR(50)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-12">
+	<changeSet author="tlberglund (generated)" id="1270840558741-12">
 		<createTable tableName="scsuppliedparm">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -193,7 +193,7 @@
 			<column name="valuedouble" type="decimal(20,8)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-13">
+	<changeSet author="tlberglund (generated)" id="1270840558741-13">
 		<createTable tableName="scuser">
 			<column autoIncrement="true" name="id" type="INT">
 				<constraints nullable="false"/>
@@ -218,140 +218,140 @@
 			<column name="company" type="VARCHAR(50)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-14">
+	<changeSet author="tlberglund (generated)" id="1270840558741-14">
 		<addPrimaryKey columnNames="pn, suppliercode, supplierid" tableName="scinventoryrecord"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-15">
+	<changeSet author="tlberglund (generated)" id="1270840558741-15">
 		<addPrimaryKey columnNames="inventoryrecordid, parmid" tableName="scinventoryrecordparm"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-16">
+	<changeSet author="tlberglund (generated)" id="1270840558741-16">
 		<addPrimaryKey columnNames="rownumber, projectid" tableName="sclineitem"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-17">
+	<changeSet author="tlberglund (generated)" id="1270840558741-17">
 		<addPrimaryKey columnNames="inventoryrecordid, lineitemid" tableName="sclineiteminventoryrecord"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-18">
+	<changeSet author="tlberglund (generated)" id="1270840558741-18">
 		<addPrimaryKey columnNames="rownumber, projectid" tableName="scpnparseentry"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-19">
+	<changeSet author="tlberglund (generated)" id="1270840558741-19">
 		<addPrimaryKey columnNames="projectid, rownumber" tableName="scpnqueryentry"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-20">
+	<changeSet author="tlberglund (generated)" id="1270840558741-20">
 		<createIndex indexName="sys_c0035302" tableName="scinventoryrecord" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-21">
+	<changeSet author="tlberglund (generated)" id="1270840558741-21">
 		<createIndex indexName="util_db_fk_1669632842" tableName="scinventoryrecord" unique="false">
 			<column name="supplierid"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-22">
+	<changeSet author="tlberglund (generated)" id="1270840558741-22">
 		<createIndex indexName="SCInventoryRecordParmindex" tableName="scinventoryrecordparm" unique="false">
 			<column name="parmid"/>
 			<column name="value"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-23">
+	<changeSet author="tlberglund (generated)" id="1270840558741-23">
 		<createIndex indexName="sys_c0035282" tableName="sclineitem" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-24">
+	<changeSet author="tlberglund (generated)" id="1270840558741-24">
 		<createIndex indexName="sys_c0035306" tableName="sclineiteminventoryrecord" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-25">
+	<changeSet author="tlberglund (generated)" id="1270840558741-25">
 		<createIndex indexName="sys_c0035286" tableName="scpnparseentry" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-26">
+	<changeSet author="tlberglund (generated)" id="1270840558741-26">
 		<createIndex indexName="sys_c0035287" tableName="scpnparseentryparm" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-27">
+	<changeSet author="tlberglund (generated)" id="1270840558741-27">
 		<createIndex indexName="sys_c0035288" tableName="scpnqueryentry" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-28">
+	<changeSet author="tlberglund (generated)" id="1270840558741-28">
 		<createIndex indexName="sys_c0035279" tableName="scproject" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-29">
+	<changeSet author="tlberglund (generated)" id="1270840558741-29">
 		<createIndex indexName="sys_c0035349" tableName="scregistrationwarehouse" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-30">
+	<changeSet author="tlberglund (generated)" id="1270840558741-30">
 		<createIndex indexName="sys_c0035339" tableName="scscrubrecordwarehouse" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-31">
+	<changeSet author="tlberglund (generated)" id="1270840558741-31">
 		<createIndex indexName="sys_c0035318" tableName="scshoppingcart" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-32">
+	<changeSet author="tlberglund (generated)" id="1270840558741-32">
 		<createIndex indexName="sys_c0035284" tableName="scsuppliedparm" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-33">
+	<changeSet author="tlberglund (generated)" id="1270840558741-33">
 		<createIndex indexName="sys_c0035276" tableName="scuser" unique="true">
 			<column name="id"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-34">
+	<changeSet author="tlberglund (generated)" id="1270840558741-34">
 		<createIndex indexName="sys_c0035277" tableName="scuser" unique="true">
 			<column name="username"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-35">
+	<changeSet author="tlberglund (generated)" id="1270840558741-35">
 		<createIndex indexName="sys_c0035278" tableName="scuser" unique="true">
 			<column name="emailaddress"/>
 		</createIndex>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-36">
+	<changeSet author="tlberglund (generated)" id="1270840558741-36">
 		<addForeignKeyConstraint baseColumnNames="inventoryrecordid" baseTableName="scinventoryrecordparm" constraintName="SCInventoryRecordParm__SCInventoryRecord_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scinventoryrecord"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-37">
+	<changeSet author="tlberglund (generated)" id="1270840558741-37">
 		<addForeignKeyConstraint baseColumnNames="projectid" baseTableName="sclineitem" constraintName="SCLineItem__SCProject_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scproject"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-38">
+	<changeSet author="tlberglund (generated)" id="1270840558741-38">
 		<addForeignKeyConstraint baseColumnNames="inventoryrecordid" baseTableName="sclineiteminventoryrecord" constraintName="SCLineItemInventoryRecord__SCInventoryRecord_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scinventoryrecord"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-39">
+	<changeSet author="tlberglund (generated)" id="1270840558741-39">
 		<addForeignKeyConstraint baseColumnNames="lineitemid" baseTableName="sclineiteminventoryrecord" constraintName="SCLineItemInventoryRecord__SCLineItem_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="sclineitem"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-40">
+	<changeSet author="tlberglund (generated)" id="1270840558741-40">
 		<addForeignKeyConstraint baseColumnNames="projectid" baseTableName="sclineiteminventoryrecord" constraintName="SCLineItemInventoryRecord__SCProject_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scproject"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-41">
+	<changeSet author="tlberglund (generated)" id="1270840558741-41">
 		<addForeignKeyConstraint baseColumnNames="projectid, rownumber" baseTableName="scpnparseentry" constraintName="SCPNParseEntry__SCLineItem__projectID_rowNumber" deferrable="false" initiallyDeferred="false" referencedColumnNames="projectid, rownumber" referencedTableName="sclineitem"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-42">
+	<changeSet author="tlberglund (generated)" id="1270840558741-42">
 		<addForeignKeyConstraint baseColumnNames="pnparseentryid" baseTableName="scpnparseentryparm" constraintName="SCPNParseEntryParm__SCPNParseEntry_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scpnparseentry"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-43">
+	<changeSet author="tlberglund (generated)" id="1270840558741-43">
 		<addForeignKeyConstraint baseColumnNames="projectid" baseTableName="scpnparseentryparm" constraintName="SCPNParseEntryParm__SCProject_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scproject"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-44">
+	<changeSet author="tlberglund (generated)" id="1270840558741-44">
 		<addForeignKeyConstraint baseColumnNames="projectid, rownumber" baseTableName="scpnqueryentry" constraintName="SCPNQueryEntry__SCLineItem_projectID_rowNumber" deferrable="false" initiallyDeferred="false" referencedColumnNames="projectid, rownumber" referencedTableName="sclineitem"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-45">
+	<changeSet author="tlberglund (generated)" id="1270840558741-45">
 		<addForeignKeyConstraint baseColumnNames="userid" baseTableName="scshoppingcart" constraintName="SCShoppingCart__SCUser_id" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="scuser"/>
 	</changeSet>
-	<changeSet author="tlberglund (generated)" id="1253740726317-46">
-		<comment>This is an automatically generated changeset, man.</comment>
+	<changeSet author="tlberglund (generated)" id="1270840558741-46">
+		<comment>There is no good reason for this comment</comment>
 		<addForeignKeyConstraint baseColumnNames="projectid, rownumber" baseTableName="scsuppliedparm" constraintName="SCSuppliedParm__SCLineItem_projectID_rowNumber" deferrable="false" initiallyDeferred="false" referencedColumnNames="projectid, rownumber" referencedTableName="sclineitem"/>
 	</changeSet>
-	<changeSet author="tlberglund" id="ABQDemo-1">
+	<changeSet author="tlberglund" id="rename-tables-to-something-less-gross">
 		<renameTable oldTableName="scinventoryrecord" newTableName="inventory_record" />
 		<renameTable oldTableName="scinventoryrecordparm" newTableName="inventory_record_parm" />
 		<renameTable oldTableName="sclineitem" newTableName="line_item" />

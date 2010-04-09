@@ -2,6 +2,7 @@
 <project name="liquibase-demo" default="compile" basedir=".">
 	<property name="lib.dir" value="lib"/>
 	<property name="doc.dir" value="doc"/>
+	<property name="changelog.file" value="changelog.xml" />
 	<property environment="env"/>
 	<property file="liquibase.properties"/>
 
@@ -17,23 +18,30 @@
 	
 	<target name="dbInit">
 		<generateChangeLog
-			outputFile="changelog.xml"
-			driver="${driver}"
-			url="${url}"
-			username="${username}"
-			password="${password}"
+			outputFile="${changelog.file}"
+			driver="${driver}" url="${url}"
+			username="${username}" password="${password}"
 			classpathref="depend.classpath"
 			/>
 			
 		<changeLogSync
-			changeLogFile="changelog.xml"
-			driver="${driver}"
-			url="${url}"
-			username="${username}"
-			password="${password}"
+			changeLogFile="${changelog.file}"
+			driver="${driver}" url="${url}"
+			username="${username}" password="${password}"
 			classpathref="depend.classpath"
 			/>
 	</target>
    
+	<target name="update">
+		<updateDatabase
+			changeLogFile="${changelog.file}"
+			driver="${driver}" url="${url}"
+			username="${username}"
+			password="${password}"
+			promptOnNonLocalDatabase="true"
+			classpathref="depend.classpath"
+		/>
+    
+	</target>
 	
 </project>
