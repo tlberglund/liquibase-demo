@@ -16,6 +16,24 @@
 		<classpath refid="depend.classpath"/>
 	</taskdef>
 	
+	<target name="generateChangeLog">
+		<generateChangeLog
+			outputFile="${changelog.file}"
+			driver="${driver}" url="${url}"
+			username="${username}" password="${password}"
+			classpathref="depend.classpath"
+			/>
+  </target>
+  
+  <target name="changeLogSync">
+    <changeLogSync
+			changeLogFile="${changelog.file}"
+			driver="${driver}" url="${url}"
+			username="${username}" password="${password}"
+			classpathref="depend.classpath"
+			/>
+  </target>
+
 	<target name="dbInit">
 		<generateChangeLog
 			outputFile="${changelog.file}"
@@ -31,17 +49,29 @@
 			classpathref="depend.classpath"
 			/>
 	</target>
-   
-	<target name="update">
-		<updateDatabase
-			changeLogFile="${changelog.file}"
-			driver="${driver}" url="${url}"
-			username="${username}"
-			password="${password}"
-			promptOnNonLocalDatabase="true"
-			classpathref="depend.classpath"
-		/>
-    
+
+ 	<target name="update">
+ 		<updateDatabase
+ 			changeLogFile="${changelog.file}"
+ 			driver="${driver}" url="${url}"
+ 			username="${username}"
+ 			password="${password}"
+ 			promptOnNonLocalDatabase="true"
+ 			classpathref="depend.classpath"
+ 		/>
+	</target>
+
+
+ 	<target name="sqlupdate">
+ 		<updateDatabase
+ 			changeLogFile="changelog.sql"
+ 			driver="${driver}" url="${url}"
+ 			username="${username}"
+ 			password="${password}"
+ 			promptOnNonLocalDatabase="true"
+ 			classpathref="depend.classpath"
+ 		/>
+
 	</target>
 	
 </project>
